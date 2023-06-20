@@ -1,4 +1,4 @@
-import { Request, Response } from 'express'
+import {Request, Response} from 'express'
 
 export type GenericRequest<T> = Request<
   T extends { params: infer P } ? P : {},
@@ -10,4 +10,6 @@ export type GenericRequest<T> = Request<
 export type GenericResponse<T> = Response<
   T extends { body: infer B } ? B : {}
 >
+
+export type ErrorResponse = { body: { message: string } }
 
